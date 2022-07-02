@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 	public float jumpForce = 10;
 
 	public Rigidbody2D rb;
+	public Animator anim;
 
 	private void Start()
 	{
@@ -18,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
 		var mov = Input.GetAxis("Horizontal");
 		transform.position += new Vector3(mov, 0, 0) * Time.deltaTime *  movSpeed;
 		Debug.Log(mov);	
+
+		anim.SetFloat("playerSpeed", Mathf.Abs(mov));
 
 		// if mov is > 0 then rotate the player to the right else rotate the player to the left
 		if (mov > 0)
