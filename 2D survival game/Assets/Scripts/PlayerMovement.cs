@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour
 {
 	public float movSpeed = 6;
-	public float jumpForce = 10;
+	public float jumpForce = 20;
 
 	public Rigidbody2D rb;
 	public Animator anim;
@@ -32,9 +32,10 @@ public class PlayerMovement : MonoBehaviour
 			transform.eulerAngles = new Vector3(0, 180, 0);
 		}
 
-		if(Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
+		if(Input.GetButtonDown("Jump"))
 		{
 			rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+			anim.SetBool("isJumping", true);
 		}
 	}
 }
