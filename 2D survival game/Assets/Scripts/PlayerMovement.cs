@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
 	public Rigidbody2D rb;
 	public Animator anim;
+	public GroundCheck groundCheck;
 
 	private void Start()
 	{
@@ -22,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
 
 		anim.SetFloat("playerSpeed", Mathf.Abs(mov));
 
-		// if mov is > 0 then rotate the player to the right else rotate the player to the left
 		if (mov > 0)
 		{
 			transform.eulerAngles = new Vector3(0, 0, 0);
@@ -32,10 +32,22 @@ public class PlayerMovement : MonoBehaviour
 			transform.eulerAngles = new Vector3(0, 180, 0);
 		}
 
-		if(Input.GetButtonDown("Jump"))
+		if(IsGrounded() && Input.GetButtonDown("Jump"))
 		{
 			rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
 			anim.SetBool("isJumping", true);
 		}
+		if (IsGrounded())
+		{
+			anim.SetBool("isJumping", false);
+		} else if (!IsGrounded())
+		{
+			anim.SetBool("isJumping", true);
+		}
+	}
+
+	private bool IsGrounded()
+	{
+		return groundCheck.isGrounded;
 	}
 }

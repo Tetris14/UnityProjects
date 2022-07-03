@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 15420688}
   - component: {fileID: 15420690}
   - component: {fileID: 15420689}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 23051379}
   - component: {fileID: 23051381}
   - component: {fileID: 23051380}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,6 +356,7 @@ GameObject:
   - component: {fileID: 297998857}
   - component: {fileID: 297998861}
   - component: {fileID: 297998860}
+  - component: {fileID: 297998862}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Untagged
@@ -378,6 +379,7 @@ MonoBehaviour:
   movSpeed: 6
   jumpForce: 3
   rb: {fileID: 297998860}
+  anim: {fileID: 297998862}
 --- !u!212 &297998858
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -491,6 +493,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.27680194, y: 0.42298335}
   m_EdgeRadius: 0
+--- !u!95 &297998862
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297998856}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d11dcb13c08baa74c85f48f87b840d06, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &939908852
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +639,7 @@ GameObject:
   - component: {fileID: 1902565493}
   - component: {fileID: 1902565495}
   - component: {fileID: 1902565494}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
